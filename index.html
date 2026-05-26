@@ -1,0 +1,548 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="description" content="Yogish Sekhar — verification infrastructure, open EDA, secure silicon, and open verification systems." />
+  <title>Yogish Sekhar | Verification, Infrastructure & Open Systems</title>
+  <style>
+    :root {
+      --bg: #0b0d10;
+      --panel: #11151b;
+      --panel-soft: #151b23;
+      --text: #eef2f6;
+      --muted: #a7b0bc;
+      --subtle: #768191;
+      --accent: #67e8f9;
+      --accent-2: #a7f3d0;
+      --line: #253041;
+      --max: 1120px;
+      --radius: 20px;
+      --shadow: 0 24px 70px rgba(0, 0, 0, 0.32);
+    }
+
+    * { box-sizing: border-box; }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      font-family: Inter, ui-sans-serif, system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      background:
+        radial-gradient(circle at top left, rgba(103, 232, 249, 0.12), transparent 32rem),
+        radial-gradient(circle at 80% 10%, rgba(167, 243, 208, 0.09), transparent 30rem),
+        var(--bg);
+      color: var(--text);
+      line-height: 1.65;
+    }
+
+    a {
+      color: var(--accent);
+      text-decoration: none;
+      text-underline-offset: 0.2em;
+    }
+
+    a:hover { text-decoration: underline; }
+
+    .wrap {
+      width: min(var(--max), calc(100% - 40px));
+      margin: 0 auto;
+    }
+
+    header {
+      padding: 88px 0 56px;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    nav {
+      display: flex;
+      justify-content: space-between;
+      gap: 24px;
+      align-items: center;
+      padding: 24px 0 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    html { scroll-behavior: smooth; }
+    section, header { scroll-margin-top: 28px; }
+
+    nav .links {
+      display: flex;
+      gap: 18px;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+
+    .eyebrow {
+      display: inline-flex;
+      align-items: center;
+      gap: 10px;
+      color: var(--accent-2);
+      font-size: 0.78rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      font-weight: 700;
+      border: 1px solid rgba(167, 243, 208, 0.22);
+      background: rgba(167, 243, 208, 0.06);
+      border-radius: 999px;
+      padding: 7px 12px;
+      margin-bottom: 24px;
+    }
+
+    h1 {
+      font-size: clamp(3rem, 8vw, 6.7rem);
+      line-height: 0.93;
+      letter-spacing: -0.075em;
+      margin: 0 0 28px;
+      max-width: 980px;
+    }
+
+    .hero-line {
+      font-size: clamp(1.3rem, 2.3vw, 2.1rem);
+      line-height: 1.25;
+      letter-spacing: -0.035em;
+      max-width: 900px;
+      color: var(--text);
+      margin: 0 0 28px;
+    }
+
+    .hero-copy {
+      max-width: 820px;
+      color: var(--muted);
+      font-size: 1.08rem;
+    }
+
+    .cta-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 14px;
+      margin-top: 32px;
+    }
+
+    .button {
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+      min-height: 46px;
+      padding: 0 18px;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.14);
+      background: rgba(255, 255, 255, 0.06);
+      color: var(--text);
+      font-weight: 650;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.16);
+    }
+
+    .button.primary {
+      background: linear-gradient(135deg, rgba(103,232,249,0.95), rgba(167,243,208,0.92));
+      color: #071014;
+      border-color: transparent;
+    }
+
+    main { padding: 28px 0 70px; }
+
+    section {
+      padding: 58px 0;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+    }
+
+    section:last-child { border-bottom: 0; }
+
+    .section-kicker {
+      color: var(--accent-2);
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      font-size: 0.75rem;
+      font-weight: 800;
+      margin-bottom: 12px;
+    }
+
+    h2 {
+      font-size: clamp(2rem, 4.2vw, 3.6rem);
+      line-height: 1.03;
+      letter-spacing: -0.055em;
+      margin: 0 0 22px;
+      max-width: 880px;
+    }
+
+    h3 {
+      font-size: clamp(1.35rem, 2vw, 1.9rem);
+      letter-spacing: -0.035em;
+      line-height: 1.2;
+      margin: 0 0 12px;
+    }
+
+    p { margin: 0 0 18px; color: var(--muted); }
+
+    .lead {
+      font-size: 1.18rem;
+      color: var(--text);
+      max-width: 880px;
+    }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(4, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .grid.three { grid-template-columns: repeat(3, 1fr); }
+    .grid.two { grid-template-columns: repeat(2, 1fr); }
+
+    .tile-name { margin: 0 0 8px; font-size: 1.05rem; color: var(--text); }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,0.055), rgba(255,255,255,0.028));
+      border: 1px solid rgba(255, 255, 255, 0.10);
+      border-radius: var(--radius);
+      padding: 24px;
+      box-shadow: var(--shadow);
+    }
+
+    .card p:last-child { margin-bottom: 0; }
+
+    .card ul { margin-bottom: 0; }
+
+    .quote-panel {
+      margin: 28px 0;
+      padding: 28px;
+      border-left: 4px solid var(--accent);
+      background: rgba(103, 232, 249, 0.055);
+      border-radius: 0 var(--radius) var(--radius) 0;
+      font-size: 1.24rem;
+      line-height: 1.35;
+      letter-spacing: -0.025em;
+      color: var(--text);
+    }
+
+    ul {
+      margin: 0 0 20px 1.1rem;
+      padding: 0;
+      color: var(--muted);
+    }
+
+    li { margin: 0.45rem 0; }
+
+    .split {
+      display: grid;
+      grid-template-columns: 0.95fr 1.05fr;
+      gap: 38px;
+      align-items: start;
+    }
+
+    .proof-list {
+      display: grid;
+      gap: 12px;
+      margin-top: 22px;
+    }
+
+    .proof-item {
+      display: grid;
+      grid-template-columns: 110px 1fr;
+      gap: 18px;
+      align-items: baseline;
+      padding: 14px 0;
+      border-bottom: 1px solid rgba(255,255,255,0.08);
+    }
+
+    .proof-item:last-child { border-bottom: 0; }
+
+    .tag {
+      color: var(--accent-2);
+      font-family: ui-monospace, SFMono-Regular, Menlo, Consolas, monospace;
+      font-size: 0.92rem;
+    }
+
+    .proof-item div:last-child { color: var(--muted); }
+
+    .pill-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 10px;
+      margin-top: 24px;
+    }
+
+    .pill {
+      color: var(--muted);
+      border: 1px solid rgba(255, 255, 255, 0.12);
+      border-radius: 999px;
+      padding: 7px 12px;
+      background: rgba(255,255,255,0.035);
+      font-size: 0.92rem;
+    }
+
+    .writing-list {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 18px;
+      margin-top: 28px;
+    }
+
+    .writing-list h3 { font-size: 1.15rem; }
+
+    footer {
+      padding: 40px 0 70px;
+      color: var(--subtle);
+      font-size: 0.95rem;
+    }
+
+    footer .footer-links {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 16px;
+      margin-bottom: 18px;
+    }
+
+    @media (max-width: 900px) {
+      .grid,
+      .grid.three,
+      .writing-list,
+      .split { grid-template-columns: 1fr; }
+
+      .proof-item { grid-template-columns: 1fr; gap: 4px; }
+
+      header { padding-top: 60px; }
+
+      nav { align-items: flex-start; flex-direction: column; }
+    }
+
+    @media (max-width: 520px) {
+      .wrap { width: min(100% - 28px, var(--max)); }
+      section { padding: 42px 0; }
+      .card { padding: 20px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <nav aria-label="Primary navigation">
+      <a href="#top" aria-label="Yogish Sekhar home">Yogish Sekhar</a>
+      <div class="links">
+        <a href="#work">Work</a>
+        <a href="#open-source">Open source</a>
+        <a href="#writing">Writing</a>
+        <a href="#links">Links</a>
+      </div>
+    </nav>
+  </div>
+
+  <header id="top">
+    <div class="wrap">
+      <div class="eyebrow">Verification, Infrastructure &amp; Open Systems</div>
+      <h1>Yogish Sekhar</h1>
+      <p class="hero-line">I help silicon companies reduce verification risk and infrastructure cost through industrial-grade open verification systems.</p>
+      <p class="hero-copy">I work at the transition layer between open silicon, verification infrastructure, secure hardware, and software-native engineering systems.</p>
+      <div class="cta-row">
+        <a class="button primary" href="#open-source">See open-source work</a>
+        <a class="button" href="https://www.linkedin.com/in/ycsekhar">LinkedIn</a>
+        <a class="button" href="https://github.com/ysekhar">GitHub</a>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section id="thesis">
+      <div class="wrap split">
+        <div>
+          <div class="section-kicker">Thesis</div>
+          <h2>Open silicon is entering its infrastructure phase.</h2>
+        </div>
+        <div>
+          <p class="lead">For two decades, advanced verification infrastructure lived almost entirely inside proprietary EDA stacks. Coverage closure, debug visibility, methodology scaling, and sign-off flows were controlled by vertically integrated commercial tooling.</p>
+          <p>That model is beginning to change. RISC-V, chiplet ecosystems, sovereign silicon initiatives, and AI-driven custom silicon have expanded the demand base for industrial-grade silicon development.</p>
+          <p>As that ecosystem grows, open infrastructure becomes strategically valuable — not just economically cheaper.</p>
+          <p>Verification is ultimately a risk-versus-cost decision: a team keeps verifying until the residual risk no longer justifies the cost of continuing. Coverage is the instrument that makes that call legible — and on an open stack, that instrument is still being built.</p>
+          <p>My work runs the length of it — producing a coverage signal teams can trust, and building toward the analytics that turn it into a verdict.</p>
+          <p><strong>This is not hobbyist open source. It is production infrastructure.</strong></p>
+        </div>
+      </div>
+    </section>
+
+    <section id="work">
+      <div class="wrap">
+        <div class="section-kicker">What I work on</div>
+        <h2>Verification systems, open EDA, secure silicon, and infrastructure economics.</h2>
+        <div class="grid">
+          <article class="card">
+            <h3>Verification infrastructure</h3>
+            <p>Coverage systems, verification methodology, simulator infrastructure, reset-safe architectures, scalable DV frameworks, and open-source verification tooling.</p>
+          </article>
+          <article class="card">
+            <h3>Open-source EDA</h3>
+            <p>Contributions to Verilator and modern open verification flows around coverage instrumentation, FSM analysis, hierarchy-aware coverage, observability, and debug infrastructure.</p>
+          </article>
+          <article class="card">
+            <h3>Secure silicon systems</h3>
+            <p>Pavona ecosystem work around secure silicon verification, access-control and OTP-controller verification, reset architecture, and Root-of-Trust DV infrastructure.</p>
+          </article>
+          <article class="card">
+            <h3>Verification economics</h3>
+            <p>How open-source infrastructure changes silicon engineering cost, EDA market structure, infrastructure accessibility, and engineering leverage.</p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="belief">
+      <div class="wrap">
+        <div class="section-kicker">What I believe is happening</div>
+        <h2>The semiconductor industry is moving toward modular open infrastructure.</h2>
+        <p class="lead">Historically, advanced silicon development required vertically integrated proprietary tooling, high fixed costs restricted participation, and verification infrastructure was concentrated among a small number of very large organisations.</p>
+        <p>RISC-V and open silicon ecosystems are creating shared coordination layers. Verification infrastructure, debug tooling, compliance frameworks, and methodology are increasingly becoming ecosystem assets rather than isolated proprietary capabilities.</p>
+        <div class="quote-panel">The important question is no longer “Can open-source silicon tooling exist?” The important question is “Which layers of the stack become strategically open first — and which capabilities matter most for industrial adoption?”</div>
+        <p>That is the lens through which I select technical work.</p>
+      </div>
+    </section>
+
+    <section id="focus">
+      <div class="wrap">
+        <div class="section-kicker">How the work fits together</div>
+        <h2>Two halves of one problem: producing a coverage signal you can trust, and consuming it to bound risk.</h2>
+        <p class="lead">Verification is a risk-versus-cost decision — keep going until the residual risk no longer justifies the effort. Coverage is the instrument that makes that call legible. My work runs its full length, from the testbench that generates the signal to the analytics that read it.</p>
+        <div class="grid three">
+          <article class="card">
+            <h3>Enabling layer — the environment</h3>
+            <p>Before any data exists, something has to generate it. The reset-safe UVM methodology in Pavona is that foundation: the testbench structure and stimulus that make a coverage signal possible. <em>Shipped.</em></p>
+          </article>
+          <article class="card">
+            <h3>Produce — a signal you can trust</h3>
+            <p>Coverage is only useful if you can rely on it. My Verilator work makes the signal complete (it detects the FSMs other tools miss), reproducible (same RTL, same number, every run), and granular (per-instance, not flattened). <em>Shipped.</em></p>
+          </article>
+          <article class="card">
+            <h3>Consume — a residual-risk verdict</h3>
+            <p>A pile of numbers is not a decision. UCIS as an interchange format, coverage merge and analytics, and open debug visualisation turn the signal into the answer that matters: how much risk is left, and is it safe to stop? <em>Roadmap.</em></p>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="open-source">
+      <div class="wrap">
+        <div class="section-kicker">Open-source work</div>
+        <h2>Production infrastructure in Verilator and Pavona.</h2>
+
+        <div class="grid three">
+          <article class="card">
+            <h3>Verilator</h3>
+            <p>Contributor of native FSM coverage to Verilator — state and arc coverage recovered directly from the RTL — extended across non-enum, case-free, wide-encoding, and primitive-wrapper detection, plus determinism fixes, coverage-summary reporting, and per-instance hierarchy coverage.</p>
+          </article>
+          <article class="card">
+            <h3>Pavona</h3>
+            <p>Contributor to the open secure-silicon distribution launched by GlobalPlatform — authoring a reset-safe DV library, access-control and OTP-controller verification, and the methodology documentation new engineers read: the <a href="https://github.com/pavona/pavona/blob/main/doc/contributing/dv/methodology/building_scalable_system_verilog_uvm_infrastructure_for_open_silicon_ips.md">UVM infrastructure guide</a>, the <a href="https://github.com/pavona/pavona/blob/main/doc/contributing/dv/methodology/pavona_reset_safe_porting_guide.md">reset-safe porting guide</a>, <a href="https://github.com/pavona/pavona/blob/main/rfc/rfc-2026-01-DV-Reset-Management/rfc_2026_01_dv_reset_management.md">RFC 2026-01</a>, and the <a href="https://github.com/pavona/pavona/blob/main/doc/contributing/dv/sec_cm_dv_framework/README.md">countermeasure verification framework</a>.</p>
+          </article>
+        </div>
+
+        <h3 style="margin-top:42px;">A coverage signal built to be trusted</h3>
+        <p style="margin:0 0 4px;color:var(--muted);">My coverage work in <a href="https://github.com/verilator/verilator">verilator/verilator</a> makes coverage reporting exist where the open flow had none — then makes it complete, reproducible, and granular. Those are the qualities that let a team rely on the number.</p>
+        <div class="grid two" aria-label="Verilator coverage work, by quality">
+          <article class="card">
+            <h3 class="tile-name">The signal itself</h3>
+            <p>Native FSM state and arc coverage, recovered directly from the RTL — a coverage type the open flow simply did not have.</p>
+          </article>
+          <article class="card">
+            <h3 class="tile-name">Complete</h3>
+            <p>Detecting the state machines other tools miss — non-enum state variables, case-free if/else chains, wide state encodings, and primitive wrappers.</p>
+          </article>
+          <article class="card">
+            <h3 class="tile-name">Reproducible</h3>
+            <p>Deterministic detection and stable tests, so the same RTL produces the same coverage number on every run.</p>
+          </article>
+          <article class="card">
+            <h3 class="tile-name">Granular</h3>
+            <p>Per-instance coverage rather than flattened totals — counts preserved down to each hierarchy instance.</p>
+          </article>
+        </div>
+        <p style="margin-top:18px;color:var(--subtle);font-size:0.9rem;">All credited to my name in Verilator's changelog — verify with <code>git log --author="ysekhar"</code> on verilator/verilator.</p>
+      </div>
+    </section>
+
+    <section id="writing">
+      <div class="wrap">
+        <div class="section-kicker">Writing and research</div>
+        <h2>Open verification economics, EDA market structure, and modular silicon ecosystems.</h2>
+        <p class="lead">I write and think about where open silicon is heading: the economics of open-source verification, the changing structure of the EDA industry, and the methodology that lets open flows reach commercial-grade rigour.</p>
+
+        <div class="writing-list">
+          <article class="card">
+            <h3>Open silicon &amp; the EDA market</h3>
+            <ul>
+              <li><a href="https://medium.com/@ycsekhar/why-pyuvm-and-python-driven-verification-will-disrupt-the-eda-industry-df41f2d2ff34">Why pyUVM and Python-Driven Verification Will Disrupt the EDA Industry</a></li>
+              <li>What's actually driving demand for open silicon.</li>
+              <li>EDA market structure: from oligopoly toward modular competition.</li>
+              <li>The avoided-reinvention premium in shared open infrastructure.</li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Methodology, published in Pavona</h3>
+            <ul>
+              <li><a href="https://github.com/pavona/pavona/blob/main/doc/contributing/dv/methodology/building_scalable_system_verilog_uvm_infrastructure_for_open_silicon_ips.md">Building Scalable SystemVerilog UVM Infrastructure for Open Silicon IPs</a></li>
+              <li><a href="https://github.com/pavona/pavona/blob/main/doc/contributing/dv/methodology/pavona_reset_safe_porting_guide.md">Pavona DV — Reset-Safe Testbench Porting Guide</a></li>
+              <li><a href="https://github.com/pavona/pavona/blob/main/rfc/rfc-2026-01-DV-Reset-Management/rfc_2026_01_dv_reset_management.md">RFC 2026-01 — Reset Management in DV Testbenches</a></li>
+              <li><a href="https://github.com/pavona/pavona/blob/main/doc/contributing/hw/comportability/README.md">Comportability in Pavona</a></li>
+            </ul>
+          </article>
+          <article class="card">
+            <h3>Simulator &amp; coverage infrastructure</h3>
+            <ul>
+              <li>Native FSM coverage in Verilator — design and rationale.</li>
+              <li>FSM detection beyond simple RTL styles.</li>
+              <li>Per-instance hierarchy coverage and where it fits a verification flow.</li>
+            </ul>
+          </article>
+        </div>
+      </div>
+    </section>
+
+    <section id="background">
+      <div class="wrap split">
+        <div>
+          <div class="section-kicker">Background</div>
+          <h2>Twenty years in silicon, EDA, and secure systems — with an MBA strategy lens.</h2>
+        </div>
+        <div>
+          <p>I’ve spent more than twenty years in semiconductor engineering across verification, infrastructure, EDA, and secure silicon systems.</p>
+          <p>Experience includes zeroRISC, Siemens EDA, Imagination Technologies, Intel, Ericsson, and Wipro.</p>
+          <p>I also hold an MBA from the University of Chicago Booth School of Business, where my focus included strategy, platform economics, organisational scaling, and technology ecosystems.</p>
+          <p>That combination shapes how I think about open silicon infrastructure: not just as an engineering problem, but as an ecosystem and economic transition.</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="interests">
+      <div class="wrap">
+        <div class="section-kicker">Strategic interest areas</div>
+        <h2>Where I spend my attention.</h2>
+        <div class="pill-row">
+          <span class="pill">Open-source verification infrastructure</span>
+          <span class="pill">Coverage systems and observability</span>
+          <span class="pill">pyUVM and Python-native DV</span>
+          <span class="pill">Secure silicon</span>
+          <span class="pill">Verilator internals</span>
+          <span class="pill">Verification methodology</span>
+          <span class="pill">RISC-V ecosystems</span>
+          <span class="pill">Infrastructure economics</span>
+          <span class="pill">Modular EDA systems</span>
+          <span class="pill">Scalable engineering systems</span>
+          <span class="pill">Software-native hardware engineering</span>
+          <span class="pill">Secure compute infrastructure</span>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer id="links">
+    <div class="wrap">
+      <div class="footer-links">
+        <a href="https://github.com/ysekhar">GitHub</a>
+        <a href="https://www.linkedin.com/in/ycsekhar">LinkedIn</a>
+        <a href="https://medium.com/@ycsekhar">Medium</a>
+        <a href="https://github.com/verilator/verilator">Verilator</a>
+        <a href="https://github.com/pavona/pavona">Pavona</a>
+      </div>
+      <div>Built as a lightweight static site. No trackers, no analytics, no ads.</div>
+    </div>
+  </footer>
+</body>
+</html>
