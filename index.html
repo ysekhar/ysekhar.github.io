@@ -3,8 +3,15 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1" />
-  <meta name="description" content="Yogish Sekhar — verification infrastructure, open EDA, secure silicon, and open verification systems." />
-  <title>Yogish Sekhar | Verification, Infrastructure & Open Systems</title>
+  <meta name="description" content="Yogish Sekhar — ASIC and silicon verification engineer. Open-source coverage tooling in Verilator, verification methodology in Pavona, and consulting on open-source verification flows." />
+  <title>Yogish Sekhar — ASIC Verification Engineer</title>
+  <link rel="canonical" href="https://ysekhar.github.io/" />
+  <meta property="og:type" content="profile" />
+  <meta property="og:title" content="Yogish Sekhar — ASIC Verification Engineer" />
+  <meta property="og:description" content="Open-source coverage tooling in Verilator, verification methodology in Pavona, and consulting on open-source verification flows." />
+  <meta property="og:url" content="https://ysekhar.github.io/" />
+  <meta name="twitter:card" content="summary" />
+  <meta name="robots" content="index, follow" />
   <style>
     :root {
       --bg: #0b0d10;
@@ -355,7 +362,7 @@
           <p>That model is beginning to change. RISC-V, chiplet ecosystems, sovereign silicon initiatives, and AI-driven custom silicon have expanded the demand base for industrial-grade silicon development.</p>
           <p>As that ecosystem grows, open infrastructure becomes strategically valuable — not just economically cheaper.</p>
           <p>Verification is ultimately a risk-versus-cost decision: a team keeps verifying until the residual risk no longer justifies the cost of continuing. Coverage is the instrument that makes that call legible — and on an open stack, that instrument is still being built.</p>
-          <p>My work runs the length of it — producing a coverage signal teams can trust, and building toward the analytics that turn it into a verdict.</p>
+          <p>I work both sides of that instrument — production and consumption. Better data on the production side, and the analytics to act on it on the consumption side, so teams reach better decisions at lower cost.</p>
           <p><strong>This is not hobbyist open source. It is production infrastructure.</strong></p>
         </div>
       </div>
@@ -380,7 +387,7 @@
           </article>
           <article class="card">
             <h3>Verification economics</h3>
-            <p>How open-source infrastructure changes silicon engineering cost, EDA market structure, infrastructure accessibility, and engineering leverage.</p>
+            <p>A commercial licence is a set of locks, not just a line item: coverage history trapped in a proprietary database, testbenches written to one tool's dialect, and per-seat fees renegotiated every year from zero leverage. Open infrastructure — and an open interchange format like UCIS — turns those locks back into choices, and hands the leverage back to the team.</p>
           </article>
         </div>
       </div>
@@ -397,23 +404,31 @@
       </div>
     </section>
 
+    <section id="consulting">
+      <div class="wrap">
+        <div class="section-kicker">Where I can help</div>
+        <h2>The premium becomes a choice, not a tax.</h2>
+        <p class="lead">Closed-source verification licences cost millions a year — much of it buying capability the open flow now matches, and lock-in it can't. Where open wins is the part licences can't sell: code you can audit, extend, and own. I build that edge — so the premium becomes a choice, not a tax.</p>
+      </div>
+    </section>
+
     <section id="focus">
       <div class="wrap">
         <div class="section-kicker">How the work fits together</div>
-        <h2>Two halves of one problem: producing a coverage signal you can trust, and consuming it to bound risk.</h2>
-        <p class="lead">Verification is a risk-versus-cost decision — keep going until the residual risk no longer justifies the effort. Coverage is the instrument that makes that call legible. My work runs its full length, from the testbench that generates the signal to the analytics that read it.</p>
+        <h2>Three layers, one job: generate the evidence, sharpen it, and turn it into a decision.</h2>
+        <p class="lead">Most verification engineers own one of these. I work across all three — the testbench that generates the data, the tooling that improves it, and the analytics that turn it into a call on whether to ship.</p>
         <div class="grid three">
           <article class="card">
             <h3>Enabling layer — the environment</h3>
-            <p>Before any data exists, something has to generate it. The reset-safe UVM methodology in Pavona is that foundation: the testbench structure and stimulus that make a coverage signal possible. <em>Shipped.</em></p>
+            <p>Evidence has to be generated before it can be trusted. The reset-safe UVM methodology in Pavona is that foundation — the testbench structure and stimulus that exercise a design thoroughly enough to measure how well it behaves. No foundation, no evidence. <em>Shipped.</em></p>
           </article>
           <article class="card">
-            <h3>Produce — a signal you can trust</h3>
-            <p>Coverage is only useful if you can rely on it. My Verilator work makes the signal complete (it detects the FSMs other tools miss), reproducible (same RTL, same number, every run), and granular (per-instance, not flattened). <em>Shipped.</em></p>
+            <h3>Produce — evidence you can trust</h3>
+            <p>Every ship decision is only as good as the evidence behind it. My Verilator work raises that quality — catching what other tools miss, staying reproducible run to run, and resolving to each instance rather than a flattened total. Better evidence, better decisions. <em>Shipped.</em></p>
           </article>
           <article class="card">
             <h3>Consume — a residual-risk verdict</h3>
-            <p>A pile of numbers is not a decision. UCIS as an interchange format, coverage merge and analytics, and open debug visualisation turn the signal into the answer that matters: how much risk is left, and is it safe to stop? <em>Roadmap.</em></p>
+            <p>A pile of numbers is not a decision. UCIS as an interchange format, coverage merge and analytics, and open debug visualisation turn that evidence into the answer that matters: how much risk is left, and is it safe to stop? <em>Roadmap.</em></p>
           </article>
         </div>
       </div>
@@ -421,8 +436,9 @@
 
     <section id="open-source">
       <div class="wrap">
-        <div class="section-kicker">Open-source work</div>
-        <h2>Production infrastructure in Verilator and Pavona.</h2>
+        <div class="section-kicker">Proof, not promises</div>
+        <h2>The layers above aren't a pitch — they're already shipping.</h2>
+        <p class="lead">If you're weighing whether open-source verification is ready for real work, this is the evidence: production infrastructure in Verilator and Pavona, merged and in use today.</p>
 
         <div class="grid three">
           <article class="card">
@@ -435,11 +451,11 @@
           </article>
         </div>
 
-        <h3 style="margin-top:42px;">A coverage signal built to be trusted</h3>
-        <p style="margin:0 0 4px;color:var(--muted);">My coverage work in <a href="https://github.com/verilator/verilator">verilator/verilator</a> makes coverage reporting exist where the open flow had none — then makes it complete, reproducible, and granular. Those are the qualities that let a team rely on the number.</p>
+        <h3 style="margin-top:42px;">A number your team can actually trust</h3>
+        <p style="margin:0 0 4px;color:var(--muted);">My coverage work in <a href="https://github.com/verilator/verilator">verilator/verilator</a> brought coverage reporting to the open flow where there was none — then made it complete, reproducible, and granular. Those are the qualities that let you rely on the number instead of second-guessing it.</p>
         <div class="grid two" aria-label="Verilator coverage work, by quality">
           <article class="card">
-            <h3 class="tile-name">The signal itself</h3>
+            <h3 class="tile-name">The capability itself</h3>
             <p>Native FSM state and arc coverage, recovered directly from the RTL — a coverage type the open flow simply did not have.</p>
           </article>
           <article class="card">
@@ -539,6 +555,7 @@
         <a href="https://github.com/ysekhar">GitHub</a>
         <a href="https://www.linkedin.com/in/ycsekhar">LinkedIn</a>
         <a href="https://medium.com/@ycsekhar">Medium</a>
+        <a href="https://www.zerorisc.com/blog/fips-compliant-zeroization">FIPS zeroization (zeroRISC blog)</a>
         <a href="https://github.com/verilator/verilator">Verilator</a>
         <a href="https://github.com/pavona/pavona">Pavona</a>
       </div>
